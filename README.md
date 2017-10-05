@@ -13,7 +13,7 @@ middle
 1 -> finish
 ```
 
-![FSM](https://raw.githubusercontent.com/jimmyhmiller/fsm-maker/master/images/example.svg "fsm")
+![FSM](https://raw.githubusercontent.com/jimmyhmiller/fsm-maker/master/images/example.svg?sanitize=true "fsm")
 
 
 ## Development
