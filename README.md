@@ -3,6 +3,9 @@
 
 Create SVG drawings of finite state machines with a simple DSL.
 
+[https://jimmyhmiller.github.io/fsm-maker/](https://jimmyhmiller.github.io/fsm-maker/)
+
+
 ```
 start
 0 -> start
