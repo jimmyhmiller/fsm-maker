@@ -4,4 +4,4 @@ goog.require('cljs.core');
 goog.require('viz.image');
 viz.core.image = viz.image.image;
 
-//# sourceMappingURL=core.js.map?rel=1507178391636
+//# sourceMappingURL=core.js.map?rel=1507334718257

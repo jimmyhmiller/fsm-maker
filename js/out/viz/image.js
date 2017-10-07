@@ -6,4 +6,4 @@ viz.image.image = (function viz$image$image(dot_string){
 return Viz(dot_string);
 });
 
-//# sourceMappingURL=image.js.map?rel=1507178391631
+//# sourceMappingURL=image.js.map?rel=1507334718252
