@@ -3,14 +3,29 @@
               [instaparse.core :as insta]
               [fsmviz.core :as fsmviz]))
 
-(defonce fsm-text (r/atom 
+
+(def default-text
 "start
 0 -> start
 1 -> middle
 
 middle
 0 -> finish
-1 -> finish"))
+1 -> finish")
+
+
+(def initial-hash
+  (subs (js/decodeURIComponent (.-hash js/location)) 1))
+
+(defonce fsm-text (r/atom 
+                   (if-not (= initial-hash "") 
+                     initial-hash
+                     default-text)))
+
+(add-watch fsm-text :url-encode
+           (fn [_ _ _ new-state]
+             (set! (.-hash js/location)
+                    (js/encodeURIComponent new-state))))
 
 (def grammar
 "<graph>       = node*
@@ -28,8 +43,7 @@ arrow          = \"->\"
   [label transition destination])
 
 (defn node->map [[_ label & connections]]
-  (->> connections
-       (map (partial extract-connection label))))
+  (map (partial extract-connection label) connections))
 
 (defn build-fsm [input]
   (->> input
